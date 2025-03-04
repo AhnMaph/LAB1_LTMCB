@@ -44,7 +44,7 @@ namespace LAB1_
                 return;
             }
 
-            Int64 total = 0;
+            double total = 0;
             total = total + num1 + num2;
 
             resBox.Text = total.ToString();
@@ -61,7 +61,7 @@ namespace LAB1_
                 return;
             }
 
-            Int64 total = 0;
+            double total = 0;
             total = total + num1 - num2;
 
             resBox.Text = total.ToString();
@@ -77,7 +77,7 @@ namespace LAB1_
                 return;
             }
 
-            Int64 total = 0;
+            double total = 0;
             total = (total + num1) * num2;
 
             resBox.Text = total.ToString();
@@ -99,7 +99,7 @@ namespace LAB1_
                 return;
             }
 
-            Int64 total = 0;
+            double total = 0;
             total = (total + num1) / num2;
 
 
