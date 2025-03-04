@@ -22,7 +22,7 @@ namespace LAB1_
 
         }
 
-        private bool checkInt(string num, ref Int32 num1, ref Int32 num2)
+        private bool checkInt(ref Int32 num1, ref Int32 num2)
         {
             bool b1 = Int32.TryParse(numBox1.Text, out num1);
             bool b2 = Int32.TryParse(numBox2.Text, out num2);
@@ -39,7 +39,7 @@ namespace LAB1_
             Int32 num1 = 0;
             Int32 num2 = 0;
 
-            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            if (!checkInt(ref num1, ref num2))
             {
                 return;
             }
@@ -56,7 +56,7 @@ namespace LAB1_
             Int32 num1 = 0;
             Int32 num2 = 0;
 
-            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            if (!checkInt(ref num1, ref num2))
             {
                 return;
             }
@@ -72,7 +72,7 @@ namespace LAB1_
             Int32 num1 = 0;
             Int32 num2 = 0;
 
-            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            if (!checkInt(ref num1, ref num2))
             {
                 return;
             }
@@ -88,7 +88,7 @@ namespace LAB1_
             Int32 num1 = 0;
             Int32 num2 = 0;
 
-            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            if (!checkInt(ref num1, ref num2))
             {
                 return;
             }
