@@ -103,7 +103,7 @@ namespace LAB1_
                     {
                         if (j == 2 && block[j] == '1' && block[j - 1] != '1')
                             res += "mốt ";
-                        else if (j == 2 && block[j] == '5') 
+                        else if (j == 2 && block[j] == '5')
                             res += "lăm ";
                         else
                         {
@@ -111,7 +111,7 @@ namespace LAB1_
                             if (donvi[j] != "")
                                 res += donvi[j] + " ";
                         }
-                    }
+                }
             }
             return res;
         }
@@ -154,8 +154,9 @@ namespace LAB1_
                 if (cBlock == 0)
                     break;
 
-                res += xuLyBlock(block, cBlock, mBlock);
-                if (cBlock > 1)
+                string temp = xuLyBlock(block, cBlock, mBlock);
+                res += temp;
+                if (cBlock > 1 && temp != "")
                     res += donvi[cBlock - 1] + " ";
 
                 cBlock -= 1;
