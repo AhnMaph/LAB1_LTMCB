@@ -45,6 +45,8 @@ namespace LAB1_
         {
             string[] so = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười"];
             string[] donvi = ["trăm", "mươi", ""];
+            
+            if (block[0] =='0' && block[1] == '0' && block[2] == '0') return "";
 
             string res = "";
             for (int j = 0; j < block.Length; j++)
@@ -57,53 +59,57 @@ namespace LAB1_
                         res += "không trăm ";
                 }
                 else
-                if (j == 1 && block[j] == '1')
-                {
-                    res += "mười ";
-                }
-                else if (j == 2 && (block[j - 1] == '0' || block[j - 2] == '0'))
-                {
-                    if (cBlock == mBlock)
+                    if (j == 1 && block[j] == '1')
                     {
-                        if (block[j - 1] == '0' && block[j - 2] != '0')
-                            res += "lẻ " + so[block[j] - '0'] + " ";
-                        else
-                            if (block[j - 1] == '0' && block[j - 2] == '0')
-                            res += so[block[j] - '0'] + " ";
-                        else
-                                if (block[j - 1] != '0')
+                        res += "mười ";
+                    }
+                    else if (j == 2 && (block[j - 1] == '0' || block[j - 2] == '0'))
+                    {
+                        if (cBlock == mBlock)
                         {
-                            if (block[j] == '5')
-                                res += "lăm ";
-                            else if (block[j] == '1')
-                                res += "mốt ";
-                            else
+                            if (block[j - 1] == '0' && block[j - 2] != '0')
+                                res += "lẻ " + so[block[j] - '0'] + " ";
+                            else if (block[j - 1] == '0' && block[j - 2] == '0')
                                 res += so[block[j] - '0'] + " ";
+                            else
+                                 if (block[j - 1] != '0')
+                                    {
+                                        if (block[j] == '5')
+                                            res += "lăm ";
+                                        else if (block[j] == '1'&& block[j - 1] != '1')
+                                            res += "mốt ";
+                                        else
+                                            res += so[block[j] - '0'] + " ";
+                                    }
+                        }
+                        else
+                        {
+                            if (block[j - 1] == '0')
+                            {
+                                res += "lẻ " + so[block[j] - '0'] + " ";
+                            }
+                            else
+                            {
+                                if (block[j] == '5')
+                                    res += "lăm ";
+                            else if (block[j] == '1'&& block[j-1]!='1')
+                                res += "mốt -";
+                            else
+                                    res += so[block[j] - '0'] + " ";
+                            }
                         }
                     }
                     else
                     {
-                        if (block[j - 1] == '0')
-                        {
-                            res += "lẻ " + so[block[j] - '0'] + " ";
-                        }
+                        if (j==2 && block[j] == '1' && block[j-1] != '1') 
+                            res += "mốt ";
                         else
                         {
-                            if (block[j] == '5')
-                                res += "lăm ";
-                            else if (block[j] == '1')
-                                res += "mốt ";
-                            else
-                                res += so[block[j] - '0'] + " ";
+                            res += so[block[j] - '0'] + " ";
+                            if (donvi[j] != "")
+                                res += donvi[j] + " ";
                         }
                     }
-                }
-                else
-                {
-                    res += so[block[j] - '0'] + " ";
-                    if (donvi[j] != "")
-                        res += donvi[j] + " ";
-                }
             }
             return res;
         }
@@ -125,7 +131,10 @@ namespace LAB1_
                 return;
 
             int cBlock = 0;
-
+            while(num[0] == '0' && num.Length > 1)
+            {
+                num = num.Substring(1);
+            }
             while (num.Length % 3 != 0)
             {
                 num = "0" + num;
