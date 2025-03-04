@@ -65,12 +65,13 @@ namespace LAB1_
                                             res += "lăm ";
                                         else if (block[j] == '1')
                                             res += "mốt ";
-                                    }
+                                        else
+                                            res += so[block[j] - '0'] + " ";
+                        }
                         }
                         else
                         {
                             if (block[j - 1] == '0') {
-                                if (block[j - 2] == '0')
                                     res += "lẻ " + so[block[j] - '0'] + " ";
                             }
                             else {
