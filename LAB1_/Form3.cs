@@ -93,7 +93,7 @@ namespace LAB1_
                                 if (block[j] == '5')
                                     res += "lăm ";
                             else if (block[j] == '1'&& block[j-1]!='1')
-                                res += "mốt -";
+                                res += "mốt ";
                             else
                                     res += so[block[j] - '0'] + " ";
                             }
