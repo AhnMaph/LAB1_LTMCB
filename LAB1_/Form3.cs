@@ -30,7 +30,7 @@ namespace LAB1_
         }
 
 
-        private string xuLyBlock(string block)
+        private string xuLyBlock(string block, int cBlock, int mBlock)
         {
             string[] so = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười"];
             string[] donvi = ["trăm", "mươi", ""];
@@ -40,27 +40,55 @@ namespace LAB1_
             {
                 if (block[j] == '0')
                 {
-                    continue;
+                    if (cBlock == mBlock || j != 0)
+                        continue;
+                    else
+                        res += "không trăm ";
                 }
                 else
-                    if (j == 1 && block[j] == '1')
+                if (j == 1 && block[j] == '1')
+                {
+                    res += "mười ";
+                }
+                else if (j == 2 && (block[j-1] == '0' || block[j-2] == '0'))
                     {
-                        res += "mười ";
-                    }
-                    else if (j == 2 && block[j-1] == '0' && block[j-2] != '0')
+                        if (cBlock == mBlock)
                         {
-                            res += "lẻ " + so[block[j] - '0'] + " ";
-                        }    
-                    else if (j == 2 && block[j] == '5' && block[j - 2] != '0')
-                         {
-                            res += "lăm ";
-                         }
-                    else  
-                    {
-                        res += so[block[j] - '0'] + " ";
-                        if (donvi[j] != "")
-                            res += donvi[j] + " ";
-                    }
+                            if (block[j - 1] == '0' && block[j - 2] != '0')
+                                res += "lẻ " + so[block[j] - '0'] + " ";
+                            else
+                                if (block[j-1] == '0' && block[j-2] == '0')
+                                    res += so[block[j] - '0'] + " ";
+                                else
+                                    if (block[j - 1] != '0') { 
+                                        if (block[j] == '5')
+                                            res += "lăm ";
+                                        else if (block[j] == '1')
+                                            res += "mốt ";
+                                    }
+                        }
+                        else
+                        {
+                            if (block[j - 1] == '0') {
+                                if (block[j - 2] == '0')
+                                    res += "lẻ " + so[block[j] - '0'] + " ";
+                            }
+                            else {
+                                if (block[j] == '5')
+                                    res += "lăm ";
+                                else if (block[j] == '1')
+                                    res += "mốt ";
+                                else
+                                    res += so[block[j] - '0'] + " ";
+                            }
+                        }
+                    }    
+                else  
+                {
+                    res += so[block[j] - '0'] + " ";
+                    if (donvi[j] != "")
+                        res += donvi[j] + " ";
+                }
             }
             return res;
         }
@@ -87,13 +115,14 @@ namespace LAB1_
                 cBlock += 1;
 
             string res = "";
+            int mBlock = cBlock;
 
             for (int i = 0; i < num.Length; i+=3) {
                 string block = num.Substring(i, 3);
                 if (cBlock == 0) 
                     break;
 
-                res += xuLyBlock(block);
+                res += xuLyBlock(block, cBlock, mBlock);
                 if (cBlock > 1)
                     res += donvi[cBlock - 1] + " ";
 
