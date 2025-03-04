@@ -16,5 +16,106 @@ namespace LAB1_
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool checkInt(string num, ref Int32 num1, ref Int32 num2)
+        {
+            bool b1 = Int32.TryParse(numBox1.Text, out num1);
+            bool b2 = Int32.TryParse(numBox2.Text, out num2);
+            if (!b1 || !b2)
+            {
+                MessageBox.Show("Vui lòng nhập số nguyên");
+                return false;
+            }
+            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Int32 num1 = 0;
+            Int32 num2 = 0;
+
+            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            {
+                return;
+            }
+
+            Int64 total = 0;
+            total = total + num1 + num2;
+
+            resBox.Text = total.ToString();
+
+        }
+
+        private void minusb_Click(object sender, EventArgs e)
+        {
+            Int32 num1 = 0;
+            Int32 num2 = 0;
+
+            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            {
+                return;
+            }
+
+            Int64 total = 0;
+            total = total + num1 - num2;
+
+            resBox.Text = total.ToString();
+        }
+
+        private void mulb_Click(object sender, EventArgs e)
+        {
+            Int32 num1 = 0;
+            Int32 num2 = 0;
+
+            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            {
+                return;
+            }
+
+            Int64 total = 0;
+            total = (total + num1) * num2;
+
+            resBox.Text = total.ToString();
+        }
+
+        private void divb_Click(object sender, EventArgs e)
+        {
+            Int32 num1 = 0;
+            Int32 num2 = 0;
+
+            if (!checkInt(numBox1.Text, ref num1, ref num2))
+            {
+                return;
+            }
+
+            if (num2 == 0)
+            {
+                MessageBox.Show("Không thể chia cho 0");
+                return;
+            }
+
+            Int64 total = 0;
+            total = (total + num1) / num2;
+
+
+            resBox.Text = total.ToString();
+        }
+
+        private void reset_Click(object sender, EventArgs e)
+        {
+            numBox1.Text = "";
+            numBox2.Text = "";
+            resBox.Text = "";
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
