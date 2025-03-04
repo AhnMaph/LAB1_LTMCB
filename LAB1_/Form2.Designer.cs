@@ -175,6 +175,7 @@
             // 
             textBoxMax.Location = new Point(553, 53);
             textBoxMax.Name = "textBoxMax";
+            textBoxMax.ReadOnly = true;
             textBoxMax.Size = new Size(221, 34);
             textBoxMax.TabIndex = 4;
             // 
@@ -182,6 +183,7 @@
             // 
             textBoxMin.Location = new Point(148, 53);
             textBoxMin.Name = "textBoxMin";
+            textBoxMin.ReadOnly = true;
             textBoxMin.Size = new Size(218, 34);
             textBoxMin.TabIndex = 3;
             // 
