@@ -42,7 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 30F, FontStyle.Bold);
-            label1.Location = new Point(603, 75);
+            label1.Location = new Point(835, 83);
             label1.Name = "label1";
             label1.Size = new Size(342, 90);
             label1.TabIndex = 0;
@@ -75,7 +75,7 @@
             numBox.Font = new Font("Times New Roman", 13F);
             numBox.Location = new Point(320, 276);
             numBox.Name = "numBox";
-            numBox.Size = new Size(1063, 47);
+            numBox.Size = new Size(1480, 47);
             numBox.TabIndex = 3;
             // 
             // resBox
@@ -84,13 +84,13 @@
             resBox.Location = new Point(320, 417);
             resBox.Name = "resBox";
             resBox.ReadOnly = true;
-            resBox.Size = new Size(1063, 47);
+            resBox.Size = new Size(1480, 47);
             resBox.TabIndex = 4;
             // 
             // readb
             // 
             readb.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            readb.Location = new Point(451, 558);
+            readb.Location = new Point(689, 596);
             readb.Name = "readb";
             readb.Size = new Size(150, 46);
             readb.TabIndex = 5;
@@ -101,7 +101,7 @@
             // clearb
             // 
             clearb.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            clearb.Location = new Point(690, 558);
+            clearb.Location = new Point(928, 596);
             clearb.Name = "clearb";
             clearb.Size = new Size(150, 46);
             clearb.TabIndex = 6;
@@ -111,7 +111,7 @@
             // closeb
             // 
             closeb.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            closeb.Location = new Point(933, 558);
+            closeb.Location = new Point(1171, 596);
             closeb.Name = "closeb";
             closeb.Size = new Size(150, 46);
             closeb.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1590, 742);
+            ClientSize = new Size(1968, 795);
             Controls.Add(closeb);
             Controls.Add(clearb);
             Controls.Add(readb);
