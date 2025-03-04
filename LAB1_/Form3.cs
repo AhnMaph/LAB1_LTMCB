@@ -29,6 +29,17 @@ namespace LAB1_
 
         }
 
+        private bool checkInt(string txt, string num)
+        {
+            long n;
+            bool res = Int64.TryParse(txt, out n);
+            if (!res)
+            {
+                MessageBox.Show("Vui lòng nhập số");
+                return false;
+            }
+            return true;
+        }
 
         private string xuLyBlock(string block, int cBlock, int mBlock)
         {
@@ -50,41 +61,44 @@ namespace LAB1_
                 {
                     res += "mười ";
                 }
-                else if (j == 2 && (block[j-1] == '0' || block[j-2] == '0'))
+                else if (j == 2 && (block[j - 1] == '0' || block[j - 2] == '0'))
+                {
+                    if (cBlock == mBlock)
                     {
-                        if (cBlock == mBlock)
+                        if (block[j - 1] == '0' && block[j - 2] != '0')
+                            res += "lẻ " + so[block[j] - '0'] + " ";
+                        else
+                            if (block[j - 1] == '0' && block[j - 2] == '0')
+                            res += so[block[j] - '0'] + " ";
+                        else
+                                if (block[j - 1] != '0')
                         {
-                            if (block[j - 1] == '0' && block[j - 2] != '0')
-                                res += "lẻ " + so[block[j] - '0'] + " ";
+                            if (block[j] == '5')
+                                res += "lăm ";
+                            else if (block[j] == '1')
+                                res += "mốt ";
                             else
-                                if (block[j-1] == '0' && block[j-2] == '0')
-                                    res += so[block[j] - '0'] + " ";
-                                else
-                                    if (block[j - 1] != '0') { 
-                                        if (block[j] == '5')
-                                            res += "lăm ";
-                                        else if (block[j] == '1')
-                                            res += "mốt ";
-                                        else
-                                            res += so[block[j] - '0'] + " ";
+                                res += so[block[j] - '0'] + " ";
                         }
+                    }
+                    else
+                    {
+                        if (block[j - 1] == '0')
+                        {
+                            res += "lẻ " + so[block[j] - '0'] + " ";
                         }
                         else
                         {
-                            if (block[j - 1] == '0') {
-                                    res += "lẻ " + so[block[j] - '0'] + " ";
-                            }
-                            else {
-                                if (block[j] == '5')
-                                    res += "lăm ";
-                                else if (block[j] == '1')
-                                    res += "mốt ";
-                                else
-                                    res += so[block[j] - '0'] + " ";
-                            }
+                            if (block[j] == '5')
+                                res += "lăm ";
+                            else if (block[j] == '1')
+                                res += "mốt ";
+                            else
+                                res += so[block[j] - '0'] + " ";
                         }
-                    }    
-                else  
+                    }
+                }
+                else
                 {
                     res += so[block[j] - '0'] + " ";
                     if (donvi[j] != "")
@@ -106,21 +120,27 @@ namespace LAB1_
 
             string num = numBox.Text;
 
+            bool check = checkInt(num, num);
+            if (!check)
+                return;
+
             int cBlock = 0;
 
-            while (num.Length % 3 != 0) {
+            while (num.Length % 3 != 0)
+            {
                 num = "0" + num;
             }
 
-            for (int i = 0; i < num.Length; i+=3) 
+            for (int i = 0; i < num.Length; i += 3)
                 cBlock += 1;
 
             string res = "";
             int mBlock = cBlock;
 
-            for (int i = 0; i < num.Length; i+=3) {
+            for (int i = 0; i < num.Length; i += 3)
+            {
                 string block = num.Substring(i, 3);
-                if (cBlock == 0) 
+                if (cBlock == 0)
                     break;
 
                 res += xuLyBlock(block, cBlock, mBlock);
@@ -132,12 +152,22 @@ namespace LAB1_
 
             if (res == "")
                 res = "Không";
-            
+
             res = res.Substring(0, 1).ToUpper() + res.Substring(1);
             resBox.Text = res;
 
         }
 
+        private void clearb_Click(object sender, EventArgs e)
+        {
+            numBox.Clear();
+            resBox.Clear();
+        }
+
+        private void closeb_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

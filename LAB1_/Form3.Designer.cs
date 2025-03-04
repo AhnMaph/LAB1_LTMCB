@@ -107,6 +107,7 @@
             clearb.TabIndex = 6;
             clearb.Text = "Xóa";
             clearb.UseVisualStyleBackColor = true;
+            clearb.Click += clearb_Click;
             // 
             // closeb
             // 
@@ -117,6 +118,7 @@
             closeb.TabIndex = 7;
             closeb.Text = "Thoát";
             closeb.UseVisualStyleBackColor = true;
+            closeb.Click += closeb_Click;
             // 
             // Form3
             // 
