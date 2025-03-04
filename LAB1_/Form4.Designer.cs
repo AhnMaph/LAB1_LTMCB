@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            button1 = new Button();
+            comboBox2 = new ComboBox();
+            label3 = new Label();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
+            label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            label3 = new Label();
-            comboBox2 = new ComboBox();
-            button1 = new Button();
             label4 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -57,6 +57,63 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Nhập Thông Tin";
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveCaptionText;
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(198, 171);
+            button1.Name = "button1";
+            button1.Size = new Size(346, 42);
+            button1.TabIndex = 6;
+            button1.Text = "Thực hiện";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button_start_Click;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Decimal", "Hex", "Binary" });
+            comboBox2.Location = new Point(407, 99);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(191, 33);
+            comboBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(340, 102);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 25);
+            label3.TabIndex = 4;
+            label3.Text = "Sang";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Decimal", "Hex", "Binary" });
+            comboBox1.Location = new Point(133, 99);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(191, 33);
+            comboBox1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(69, 102);
+            label2.Name = "label2";
+            label2.Size = new Size(58, 25);
+            label2.TabIndex = 2;
+            label2.Text = "Chọn:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(6, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(121, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Nhập một số:";
+            // 
             // textBox1
             // 
             textBox1.Location = new Point(132, 55);
@@ -71,62 +128,6 @@
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(571, 31);
             textBox2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 58);
-            label1.Name = "label1";
-            label1.Size = new Size(121, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Nhập một số:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(69, 102);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Chọn:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Decimal", "Hex", "Binary" });
-            comboBox1.Location = new Point(133, 99);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(191, 33);
-            comboBox1.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(340, 102);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 25);
-            label3.TabIndex = 4;
-            label3.Text = "Sang";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Decimal", "Hex", "Binary" });
-            comboBox2.Location = new Point(407, 99);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(191, 33);
-            comboBox2.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ActiveCaptionText;
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(198, 171);
-            button1.Name = "button1";
-            button1.Size = new Size(346, 42);
-            button1.TabIndex = 6;
-            button1.Text = "Thực hiện";
-            button1.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
