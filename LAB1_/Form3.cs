@@ -101,8 +101,10 @@ namespace LAB1_
                     }
                     else
                     {
-                        if (j==2 && block[j] == '1' && block[j-1] != '1') 
+                        if (j == 2 && block[j] == '1' && block[j - 1] != '1')
                             res += "mốt ";
+                        else if (j == 2 && block[j] == '5') 
+                            res += "lăm ";
                         else
                         {
                             res += so[block[j] - '0'] + " ";
