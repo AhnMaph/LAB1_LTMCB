@@ -40,6 +40,7 @@
             diemMin = new Label();
             monFail = new Label();
             rank = new Label();
+            groupBox1 = new GroupBox();
             SuspendLayout();
             // 
             // label1
@@ -55,10 +56,10 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(55, 262);
+            listView1.Location = new Point(55, 294);
             listView1.Margin = new Padding(4, 3, 4, 3);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1002, 453);
+            listView1.Size = new Size(1002, 421);
             listView1.TabIndex = 1;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -109,7 +110,7 @@
             // 
             diemTB.AutoSize = true;
             diemTB.Font = new Font("Times New Roman", 11F, FontStyle.Bold);
-            diemTB.Location = new Point(55, 732);
+            diemTB.Location = new Point(55, 748);
             diemTB.Margin = new Padding(4, 0, 4, 0);
             diemTB.Name = "diemTB";
             diemTB.Size = new Size(140, 35);
@@ -120,7 +121,7 @@
             // 
             diemMax.AutoSize = true;
             diemMax.Font = new Font("Times New Roman", 11F, FontStyle.Bold);
-            diemMax.Location = new Point(55, 790);
+            diemMax.Location = new Point(55, 806);
             diemMax.Margin = new Padding(4, 0, 4, 0);
             diemMax.Name = "diemMax";
             diemMax.Size = new Size(206, 35);
@@ -131,7 +132,7 @@
             // 
             monPass.AutoSize = true;
             monPass.Font = new Font("Times New Roman", 11F, FontStyle.Bold);
-            monPass.Location = new Point(396, 732);
+            monPass.Location = new Point(396, 748);
             monPass.Margin = new Padding(4, 0, 4, 0);
             monPass.Name = "monPass";
             monPass.Size = new Size(175, 35);
@@ -142,7 +143,7 @@
             // 
             diemMin.AutoSize = true;
             diemMin.Font = new Font("Times New Roman", 11F, FontStyle.Bold);
-            diemMin.Location = new Point(396, 790);
+            diemMin.Location = new Point(396, 806);
             diemMin.Margin = new Padding(4, 0, 4, 0);
             diemMin.Name = "diemMin";
             diemMin.Size = new Size(221, 35);
@@ -153,7 +154,7 @@
             // 
             monFail.AutoSize = true;
             monFail.Font = new Font("Times New Roman", 11F, FontStyle.Bold);
-            monFail.Location = new Point(753, 732);
+            monFail.Location = new Point(753, 748);
             monFail.Margin = new Padding(4, 0, 4, 0);
             monFail.Name = "monFail";
             monFail.Size = new Size(260, 35);
@@ -164,18 +165,29 @@
             // 
             rank.AutoSize = true;
             rank.Font = new Font("Times New Roman", 11F, FontStyle.Bold);
-            rank.Location = new Point(753, 790);
+            rank.Location = new Point(753, 806);
             rank.Margin = new Padding(4, 0, 4, 0);
             rank.Name = "rank";
             rank.Size = new Size(129, 35);
             rank.TabIndex = 11;
             rank.Text = "Xếp loại:";
             // 
+            // groupBox1
+            // 
+            groupBox1.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            groupBox1.Location = new Point(27, 248);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1050, 481);
+            groupBox1.TabIndex = 12;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Danh sách môn học và điểm";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1119, 845);
+            ClientSize = new Size(1109, 859);
             Controls.Add(rank);
             Controls.Add(monFail);
             Controls.Add(diemMin);
@@ -188,6 +200,7 @@
             Controls.Add(label2);
             Controls.Add(listView1);
             Controls.Add(label1);
+            Controls.Add(groupBox1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form5";
             Text = "Form5";
@@ -209,5 +222,6 @@
         private Label diemMin;
         private Label monFail;
         private Label rank;
+        private GroupBox groupBox1;
     }
 }

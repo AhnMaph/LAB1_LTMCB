@@ -18,11 +18,12 @@ namespace LAB1_
         }
         private bool check(string txt)
         {
-            return txt.Split(' ',StringSplitOptions.RemoveEmptyEntries)
-                .All(x => double.TryParse(x, out double num) && num > 0&& num<11);
+            return txt.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                .All(x => double.TryParse(x, out double num) && num > 0 && num < 11);
         }
 
-        private string getRank(double avg, double[] mark) { 
+        private string getRank(double avg, double[] mark)
+        {
             // Count subjects which have mark < key in Dictionary
             Dictionary<double, int> under_score = new Dictionary<double, int>();
             under_score.Add(2, 0);
@@ -30,27 +31,34 @@ namespace LAB1_
             under_score.Add(5, 0);
             under_score.Add(6.5, 0);
 
-            foreach (double num in mark) {
-                foreach (double key in under_score.Keys) {
-                    if (num < key) {
+            foreach (double num in mark)
+            {
+                foreach (double key in under_score.Keys)
+                {
+                    if (num < key)
+                    {
                         under_score[key]++;
                     }
                 }
             }
 
-            if (avg >= 8) {
+            if (avg >= 8)
+            {
                 if (under_score[6.5] == 0) return "Giỏi";
             }
 
-            if (avg >= 6.5) {
+            if (avg >= 6.5)
+            {
                 if (under_score[5] == 0) return "Khá";
             }
 
-            if (avg >= 5) {
+            if (avg >= 5)
+            {
                 if (under_score[3.5] == 0) return "Trung Bình";
             }
 
-            if (avg >= 3.5) {
+            if (avg >= 3.5)
+            {
                 if (under_score[2] == 0) return "Yếu";
             }
 
@@ -71,7 +79,8 @@ namespace LAB1_
 
             listView1.View = View.List;
 
-            for (int i = 0; i < arr.Length; i++) {
+            for (int i = 0; i < arr.Length; i++)
+            {
                 ListViewItem item = new ListViewItem("Môn " + (i + 1) + ": " + arr[i]);
                 Font itemFont = new Font("Times New Roman", 11, FontStyle.Bold);
                 item.Font = itemFont;
@@ -85,14 +94,16 @@ namespace LAB1_
             double min = arr[0];
             double max = arr[arr.Length - 1];
 
-            foreach (double num in arr) {
+            foreach (double num in arr)
+            {
                 avg += num;
             }
 
             avg /= arr.Length;
 
-            int subPass = 0, subFail = 0;            
-            for (int i = 0;i<arr.Length;i++) {
+            int subPass = 0, subFail = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
                 if (arr[i] >= 5) subPass++;
                 else subFail++;
             }
@@ -103,6 +114,11 @@ namespace LAB1_
             monPass.Text = "Số môn đậu: " + subPass;
             monFail.Text = "Số môn không đậu: " + subFail;
             rank.Text = "Xếp loại: " + getRank(avg, arr);
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }
