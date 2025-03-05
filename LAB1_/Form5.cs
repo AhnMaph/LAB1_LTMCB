@@ -116,10 +116,5 @@ namespace LAB1_
             rank.Text = "Xếp loại: " + getRank(avg, arr);
 
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

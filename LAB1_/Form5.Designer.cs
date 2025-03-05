@@ -181,7 +181,6 @@
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Danh sách môn học và điểm";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // Form5
             // 
