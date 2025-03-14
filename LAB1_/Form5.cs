@@ -72,6 +72,12 @@ namespace LAB1_
             if (!check(textBox1.Text))
             {
                 MessageBox.Show("List điểm không hợp lệ");
+                diemTB.Text = "Điểm: ";
+                diemMax.Text = "Điểm cao nhất: ";
+                diemMin.Text = "Điểm thấp nhất: ";
+                monPass.Text = "Số môn đậu: ";
+                monFail.Text = "Số môn không đậu: ";
+                rank.Text = "Xếp loại: ";
                 return;
             }
             double[] arr = textBox1.Text.Split(' ', StringSplitOptions.RemoveEmptyEntries)
@@ -94,8 +100,7 @@ namespace LAB1_
             double min = arr[0];
             double max = arr[arr.Length - 1];
 
-            foreach (double num in arr)
-            {
+            foreach (double num in arr) {
                 avg += num;
             }
 
