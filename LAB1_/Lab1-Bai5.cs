@@ -72,7 +72,7 @@ namespace LAB1_
             if (!check(textBox1.Text))
             {
                 MessageBox.Show("List điểm không hợp lệ");
-                diemTB.Text = "Điểm: ";
+                diemTB.Text = "Điểm TB: ";
                 diemMax.Text = "Điểm cao nhất: ";
                 diemMin.Text = "Điểm thấp nhất: ";
                 monPass.Text = "Số môn đậu: ";
@@ -113,7 +113,7 @@ namespace LAB1_
                 else subFail++;
             }
 
-            diemTB.Text = "Điểm: " + Math.Round(avg, 2);
+            diemTB.Text = "Điểm TB: " + Math.Round(avg, 2);
             diemMax.Text = "Điểm cao nhất: " + max;
             diemMin.Text = "Điểm thấp nhất: " + min;
             monPass.Text = "Số môn đậu: " + subPass;
