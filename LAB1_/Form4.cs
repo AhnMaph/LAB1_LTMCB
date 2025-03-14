@@ -47,24 +47,38 @@ namespace LAB1_
         private void button_start_Click(object sender, EventArgs e)
         {
             string num = textBox1.Text;
-            if(comboBox1.Text.Length == 0 ||
+            if (comboBox1.Text.Length == 0 ||
                 comboBox2.Text.Length == 0 ||
                 textBox1.Text.Length == 0)
-                { 
-                return; }
+            {
+                return;
+            }
             int baseFrom = GetBase(comboBox1.Text);
             int baseTo = GetBase(comboBox2.Text);
-            if (!IsValidNumber(num,baseFrom))    
+            if (!IsValidNumber(num, baseFrom))
             {
-                    MessageBox.Show("Vui lòng nhập đúng định dạng");
-                    return;
-            }    
-            
-            
-            string ans = ConvertBase(num,baseFrom, baseTo);
-            
+                MessageBox.Show("Vui lòng nhập đúng định dạng");
+                return;
+            }
+
+
+            string ans = ConvertBase(num, baseFrom, baseTo);
+
             textBox2.Text = ans;
             return;
+        }
+
+        private void delButton_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            comboBox1.ResetText();
+            comboBox2.ResetText();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
